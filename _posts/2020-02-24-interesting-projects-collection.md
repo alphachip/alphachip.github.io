@@ -2,7 +2,7 @@
 layout: article
 title: 다소 쓸데없어보일지 모르는, 신기하고 재밌어보이는 프로젝트들. Interesting Projects Collection
 author: alphachip
-tag: interesting,collection,project
+tag: [interesting,collection,project]
 aside:
   toc: true
 ---
