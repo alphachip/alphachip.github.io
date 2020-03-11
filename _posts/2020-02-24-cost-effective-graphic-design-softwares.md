@@ -2,11 +2,12 @@
 layout: article
 title: Adobe 탈출기_Affinity
 tags: cost-effective,software
+author: alphachip
+aside:
+  toc: true
 ---
 
 ## 부제: 포토샵, 일러스트 대체할 저렴한 프로그램 추천
-* 목차
-{:toc}
 
 ## 1. 문제 제기: Abode(어도비)사의 가격 정책
 
