@@ -178,4 +178,118 @@ print(
 `0`,`1`,`4`이다. 이 중 가장 큰 결과값을 가진 것은 `4`, 즉 `14`가 반환.
 
 
-##
+# bool
+## `int` 형과 `float` 형 비교 가능
+```python
+3.0 == 3
+```
+
+result
+```python
+True
+```
+
+## `string` 과 `int` 비교 불가
+```python
+‘3’ == 3
+```
+
+result
+```python
+False
+```
+
+## *bool* 아닌 것을 함수로 변환 했을 때 결과
+```python
+print(bool(1)) # all numbers are treated as true, except 0
+print(bool(0))
+print(bool("asf")) # all strings are treated as true, except the empty string ""
+print(bool(""))
+```
+
+result
+```python
+True
+False
+True
+False
+```
+`1` 과 `0` 은 각각 `True` 와 `False`,
+
+*String* 은 `True`,
+
+`””` 은 `False` 로 변환된다
+
+
+## `and` `or` `not`
+
+`&&`나 `||`나 `!`를 쓰지 않는다
+
+```python
+def can_run_for_president(age, is_natural_born_citizen):
+    """Can someone of the given age and citizenship status run for president in the US?"""
+    # The US Constitution says you must be a natural born citizen *and* at least 35 years old
+    return is_natural_born_citizen and (age >= 35)
+
+print(can_run_for_president(19, True))
+print(can_run_for_president(55, False))
+print(can_run_for_president(55, True))
+```
+
+result
+```python
+false
+false
+true
+```
+
+```python
+True or True and False
+```
+
+result
+```python
+True
+```
+`and` 가 `or` 보다 우선 순위가 높다.
+
+가독성을 위해서는 `()`를 쓰자. 길다면 개행을 하여 여러줄로 쓰는 것도 좋다.
+
+## 추가)반환값
+```python
+return (int(ketchup) + int(mustard) + int(onion)) == 1
+```
+이것을
+```python
+return (ketchup + mustard + onion) == 1
+```
+이렇게 해도 `bool` 형태로 반환
+
+# 조건문
+`if`, `elif`, `else` 이용
+
+`elif` 는 다른 언어의 `else if` 의 의미와 같음.
+
+조건문 내의 명령어를 여러 줄 입력하고 싶으면 줄을 맞추자
+
+## bool  형식이 아닌 것을 조건문으로
+`if 0` 이나 `if “a”`이런 식으로 bool 함수 쓰지 않고도 조건문으로 쓸 수 있음
+
+## 삼항 조건 연산자<sup>ternary</sup>
+```python
+if grade < 50:
+        outcome = 'failed'
+    else:
+        outcome = 'passed'
+```
+이것을
+
+```python
+outcome = 'failed' if grade < 50 else 'passed'
+```
+ 이렇게 변환 가능
+
+```python
+print("Splitting", total_candies, "candy" if total_candies == 1 else "candies")
+```
+
