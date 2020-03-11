@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: article
 title: 다소 쓸데없어보일지 모르는, 신기하고 재밌어보이는 프로젝트들. Interesting Projects Collection
-date: 2020-02-24 04:25:00 +0900
-description: 쓸데없는 것이 더 재미있는 법
-tag: [interesting,collection,project]
+author: alphachip
+tag: interesting,collection,project
+aside:
+  toc: true
 ---
+
 
 쓸데없는 것이 더 재미있는 법. 창의적인 프로젝트들을 모아보았다.
 앞으로도 업데이트할 예정.
