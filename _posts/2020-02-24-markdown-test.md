@@ -2,6 +2,7 @@
 layout: article
 title: Markdown Test
 tags: test
+author: alphachip
 aside:
   toc: true
 ---
