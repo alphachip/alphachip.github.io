@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Python 기본 문법 중 특이한 점
-tags: python,kaggle-courses
+tags: [python,kaggle-courses]
 author: alphachip
 aside:
   toc: true
