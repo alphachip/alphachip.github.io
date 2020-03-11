@@ -80,7 +80,6 @@ print(abs(-2))
 ## help : 어떤 함수인지 궁금할 때.
 ```python
 help(round)
-{% endhighlight %}
 ```
 
 *주의*
