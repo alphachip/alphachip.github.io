@@ -6,14 +6,14 @@ author: alphachip
 aside:
   toc: true
 ---
-## 변수, 숫자
+# 변수, 숫자
 
-### 변수<sup>dd</sup>
+## 변수<sup>dd</sup>
 * 선언 안해도 됨
 * 타입명 기입 안해도 됨
 * 대입하는 종류에 따라 자동으로 타입 변경됨 => 타입 아무거나 넣어도 된다
 
-### 변수 타입 확인
+## 변수 타입 확인
 ```python
 a=1;
 type(a)
@@ -21,14 +21,14 @@ a=1.1;
 type(a)
 ```
 
-### 형변환
+## 형변환
 ```python
 print(float(1))
 print(int(1.11))
 print(int(‘1’)+1)
 ```
 
-### swap
+## swap
 ```python
 a=[1,2,3]
 b=[3,2,1]
@@ -36,7 +36,7 @@ a,b=b,a
 #a는 b의 배열, b는 a의 배열로 swap됨
 ```
 
-### 연산
+## 연산
 ```python
 print(5/2)
 print(6/2)
@@ -45,7 +45,7 @@ print(5//2)
 print(6//2)
 ```
 
-### 반복문
+## 반복문
 ```python
 a=2
 if a>0:
@@ -53,13 +53,13 @@ if a>0:
 print(song)
 ```
 
-### 숫자를 이용한 String 반복 출력
+## 숫자를 이용한 String 반복 출력
 ```python
 song="La"*3
 print(song)
 ```
 
-### 숫자 관련 함수
+## 숫자 관련 함수
 `min`,`max`,`abs`함수를 라이브러리 import 필요 없이 사용 가능
 ```python
 print(min(1,2,3))
@@ -69,15 +69,15 @@ print(abs(2))
 print(abs(-2))
 ```
 
-### 주석
+## 주석
 ```python
 #어쩌구
 ```
 
 
-## 함수
+# 함수
 
-### help : 어떤 함수인지 궁금할 때.
+## help : 어떤 함수인지 궁금할 때.
 ```python
 help(round)
 {% endhighlight %}
@@ -89,7 +89,7 @@ help(round)
 * *잘못된 예: `help(round(-2.01))`*
 * *int가 반환되어 int에 대한 설명을 볼 수 있음.;*
 
-### print 함수
+## print 함수
 ```python
 print(1, 2, 3, sep=' < ')
 ```
@@ -97,7 +97,7 @@ print(1, 2, 3, sep=' < ')
 
 기본 값은 공백
 
-### 함수 선언과 사용
+## 함수 선언과 사용
 ```python
 def least_difference(a, b, c):
     """Return the smallest difference between any two numbers
@@ -121,7 +121,7 @@ print(
 
 `>>>`이거는 배시를 뜻하는 걸로, 예시를 표현할 때 사용
 
-### 함수 인자
+## 함수 인자
 ```python
 def greet(who="Colin"):
     print("Hello,", who)
@@ -132,14 +132,14 @@ greet("world")
 ```
 다양한 매개변수 입력 방법. 디폴트 값을 지정할 수 있다.
 
-### 반환 값이 없을 때
+## 반환 값이 없을 때
 `None`을 반환한다. (`null`혹은 `NULL`과 같은 의미)
 ```python
 mystery = print()
 print(mystery)
 ```
 
-### 함수 중첩
+## 함수 중첩
 ```python
 def mult_by_five(x):
     return 5 * x
@@ -159,7 +159,7 @@ print(
 )
 ```
 
-### 함수 일괄 적용
+## 함수 일괄 적용
 ```python
 def mod_5(x):
     """Return the remainder of x after dividing by 5"""
