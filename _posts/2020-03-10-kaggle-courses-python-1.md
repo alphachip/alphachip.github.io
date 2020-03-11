@@ -1,17 +1,11 @@
 ---
-layout: post
+layout: article
 title: Python 기본 문법 중 특이한 점
-date: 2020-03-10 22:06:00 +0900
-description: Python unique grammar in basic
-img:
-fig-caption:
-tags: [python,kaggle-courses]
+tags: python,kaggle-courses
+author: alphachip
+aside:
+  toc: true
 ---
-## 목차
-* 목차
-{:toc}
-
-
 ## 변수, 숫자
 
 ### 변수<sup>dd</sup>
