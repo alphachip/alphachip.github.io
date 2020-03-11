@@ -22,66 +22,66 @@ type(a)
 ```
 
 ### 형변환
-{% highlight python %}
+```python
 print(float(1))
 print(int(1.11))
 print(int(‘1’)+1)
-{% endhighlight %}
+```
 
 ### swap
-{% highlight python %}
+```python
 a=[1,2,3]
 b=[3,2,1]
 a,b=b,a
 #a는 b의 배열, b는 a의 배열로 swap됨
-{% endhighlight %}
+```
 
 ### 연산
-{% highlight python %}
+```python
 print(5/2)
 print(6/2)
 
 print(5//2)
 print(6//2)
-{% endhighlight %}
+```
 
 ### 반복문
-{% highlight python %}
+```python
 a=2
 if a>0:
   print("over")
 print(song)
-{% endhighlight %}
+```
 
 ### 숫자를 이용한 String 반복 출력
-{% highlight python %}
+```python
 song="La"*3
 print(song)
-{% endhighlight %}
+```
 
 ### 숫자 관련 함수
 `min`,`max`,`abs`함수를 라이브러리 import 필요 없이 사용 가능
-{% highlight python %}
+```python
 print(min(1,2,3))
 print(max(1,2,3))
 
 print(abs(2))
 print(abs(-2))
-{% endhighlight %}
+```
 
 ### 주석
-{% highlight python %}
+```python
 #어쩌구
-{% endhighlight %}
+```
 
 
 ## 함수
 
 ### help : 어떤 함수인지 궁금할 때.
-{% highlight python %}
+```python
 help(round)
 {% endhighlight %}
-round 함수에 대한 설명을 볼 수 있다.
+```
 
 *주의*
 * *함수에 대한 이름만 쓸 것.*
@@ -90,15 +90,15 @@ round 함수에 대한 설명을 볼 수 있다.
 * *int가 반환되어 int에 대한 설명을 볼 수 있음.;*
 
 ### print 함수
-{% highlight python %}
+```python
 print(1, 2, 3, sep=' < ')
-{% endhighlight %}
+```
 값들 사이에 `<`가 추가
 
 기본 값은 공백
 
 ### 함수 선언과 사용
-{% highlight python %}
+```python
 def least_difference(a, b, c):
     """Return the smallest difference between any two numbers
     among a, b and c.
@@ -116,31 +116,31 @@ print(
     least_difference(1, 10, 10),
     least_difference(5, 6, 7), #여기서 쉼표 가능
 )
-{% endhighlight %}
+```
 `””” “””`로 묶어준 것은 help함수를 썼을 때 사용자 정의 함수에 대한 설명을 해준다
 
 `>>>`이거는 배시를 뜻하는 걸로, 예시를 표현할 때 사용
 
 ### 함수 인자
-{% highlight python %}
+```python
 def greet(who="Colin"):
     print("Hello,", who)
     
 greet()
 greet(who="Kaggle")
 greet("world")
-{% endhighlight %}
+```
 다양한 매개변수 입력 방법. 디폴트 값을 지정할 수 있다.
 
 ### 반환 값이 없을 때
 `None`을 반환한다. (`null`혹은 `NULL`과 같은 의미)
-{% highlight python %}
+```python
 mystery = print()
 print(mystery)
-{% endhighlight %}
+```
 
 ### 함수 중첩
-{% highlight python %}
+```python
 def mult_by_five(x):
     return 5 * x
 
@@ -157,10 +157,10 @@ print(
     squared_call(mult_by_five, 1), 
     sep='\n', # '\n' is the newline character - it starts a new line
 )
-{% endhighlight %}
+```
 
 ### 함수 일괄 적용
-{% highlight python %}
+```python
 def mod_5(x):
     """Return the remainder of x after dividing by 5"""
     return x % 5
@@ -172,7 +172,7 @@ print(
     max(100, 51, 14, key=mod_5),
     sep='\n',
 )
-{% endhighlight %}
+```
 `’Which number is the biggest modulo 5?’`에서
 `100%5`,`51%5`,`14%5`의 결과는 각각
 
