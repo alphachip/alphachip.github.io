@@ -1,11 +1,7 @@
 ---
-layout: post
+layout: article
 title: Adobe 탈출기_Affinity
-date: 2020-02-24 14:04:00 +0900
-description: Cost-effective graphic design softwares(=Affinity)
-img: affinity.png
-fig-caption:
-tags: [cost-effective,software]
+tags: cost-effective,software
 ---
 
 ## 부제: 포토샵, 일러스트 대체할 저렴한 프로그램 추천
