@@ -293,3 +293,95 @@ outcome = 'failed' if grade < 50 else 'passed'
 print("Splitting", total_candies, "candy" if total_candies == 1 else "candies")
 ```
 
+# List
+* 순서 있는 배열
+* 다양한 종류 한 배열에 가능
+* 변경 가능
+
+## creating
+```python
+hi = [“hihi”,1, help]
+hands = [
+    ['J', 'Q', 'K'],
+    ['2', '2', '2'],
+    ['6', 'A', 'K'], # (Comma after the last element is optional)
+]
+```
+
+## indexing
+```python
+hi[0]
+hi[-1]
+```
+`-1` 은 뒤에서 첫번째를 가르킴
+
+## slicing
+```python
+hi[0:1] #0포함~1이전
+hi[:1] #처음부터 1이전까지
+hi[1:] #1부터 끝까지
+hi[1:-1] #1~마지막이전
+hi[-2:] #마지막 2개1
+```
+
+## changing
+바로 위의 indexing과 slicing을 이용해 선언하듯 바로 대입해 변경 가능(반복문 불필요)
+
+## `len()`
+```python
+len(hi) #배열 길이 출력
+a = [1, 2, 3] #길이 3
+b = [1, [2, 3]] #[2,3]은 1개 취급
+c = [] #0
+d = [1, 2, 3][1:] #[2,3]과 같음
+```
+
+## `sorted()`
+```python
+sorted(alphabet_array) #알파벳 순 정렬
+```
+
+## `sum()`
+```python
+sum(int_array) #배열 안의 숫자들 합계 반환
+```
+
+## `max()`
+```python
+max(int_array) #배열 중 가장 큰 값 반환
+```
+
+## `append()`
+```python
+hi.append(‘yo’) #리스트 끝에 추가됨
+```
+`append()` 는 list 내에서 쓰이는 함수
+
+## `pop()`
+```python
+hi.pop() # it removes and returns the last element of a list
+```
+
+## searching
+```python
+hi.index(‘yo’) #없는 원소를 입력하면 오류 발생
+“aaaa” in hi #To avoid error. it returns True/False
+```
+
+# Tuples
+* List와의 차이점 1. `()`사용. 심지어 선언할 때 사용 안해도 됨
+* 차이점 2. 변경 불가
+
+## 선언
+```python
+t=(1,2,3)
+a=1,2,3 #위와 동일
+```
+
+## `as_integer_ratio()`
+```python
+x=0.125
+numerator, denominator = x.as_integer_ratio() #분수의 분자와 분모를 반환. (1, 8)
+#numerator=1, denominator=8 대입
+```
+
