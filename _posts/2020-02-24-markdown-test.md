@@ -1,11 +1,9 @@
 ---
-layout: post
+layout: article
 title: Markdown Test
-date: 2020-02-24 00:00:00 +0900
-description:
-img: workflow.jpg # optional
-fig-caption: # optional
-tags: [test]
+tags: test
+aside:
+  toc: true
 ---
 
 글을 써보도록 하겠습니다. 다음 줄은 두 번 엔터로
