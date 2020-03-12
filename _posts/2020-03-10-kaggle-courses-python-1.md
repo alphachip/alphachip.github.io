@@ -491,3 +491,44 @@ def count_negatives(nums):
 > 짧은 코드가 항상 좋다. 하지만 아래([The Zen of Python](https://en.wikipedia.org/wiki/Zen_of_Python))를 기억할 것
 > Readability counts.
 > Explicit is better than implicit.
+
+# String
+
+## using
+```python
+x = 'Pluto is a planet'
+y = "Pluto is a planet"
+x == y #True # ’ ’와 “ ” 둘 다 사용 가능
+```
+
+## expression
+```python
+print("Pluto's a planet!") #Pluto’s a planet!
+print('My dog is named "Pluto"') #My dog is named “Pluto”
+print('Pluto's a planet!’) #error
+print('Pluto\'s a planet!') #ok # \’, \”, \\, \n
+```
+
+##enter
+```python
+hello = "hello\nworld"
+#hello
+#world
+
+triplequoted_hello = """hello
+world"""
+#hello
+#world
+triplequoted_hello == hello #true
+```
+
+## `print()`
+```python
+print("hello")
+print("world")
+#hello
+#world
+print("hello", end='')
+print("pluto", end='')
+#hellopluto
+```
