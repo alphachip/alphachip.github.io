@@ -205,22 +205,22 @@ True or True and False #True
 
 가독성을 위해서는 `()`를 쓰자. 길다면 개행을 하여 여러줄로 쓰는 것도 좋다.
 
-## cf. return value
+## calculating
 ```python
-return (int(ketchup) + int(mustard) + int(onion)) == 1
+return (int(ketchup) + int(mustard) + int(onion)) == 1 #int() 안 써도 됨
 ```
-이것을
+위 코드와 아래 코드는 같은 결과가 나온다
 ```python
 return (ketchup + mustard + onion) == 1
 ```
-이렇게 해도 `bool` 형태로 반환
+`True+False+False=1`로 계산
 
 # conditionals
 * `if`, `elif`, `else` 이용
 * `elif` 는 다른 언어의 `else if` 의 의미와 같음.
 * 조건문 내의 명령어를 여러 줄 입력하고 싶으면 줄을 맞추자
 
-## bool  형식이 아닌 것을 조건문으로
+## NOT `bool` can use statement
 `if 0` 이나 `if "a"`이런 식으로 bool 함수 쓰지 않고도 조건문으로 쓸 수 있음
 
 ## 삼항 조건 연산자<sup>ternary</sup>
@@ -340,3 +340,154 @@ numerator, denominator = x.as_integer_ratio() #분수의 분자와 분모를 반
 #numerator=1, denominator=8 대입
 ```
 
+# Loops
+
+## using
+```python
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+for planet in planets:
+    print(planet, end=' ')
+#Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune
+```
+tuple도 가능
+
+string 예시
+```python
+s = 'steganograpHy is the practicE of conceaLing a file, message, image, or video within another fiLe, message, image, Or video.'
+msg = ''
+# print all the uppercase letters in s, one at a time
+for char in s:
+    if char.isupper():
+        print(char, end='') 
+#HELLO
+```
+
+## `range()`
+```python
+for i in range(5): #숫자 순서대로 하나씩 반환
+    print("Doing important work. i =", i)
+#Doing important work. i = 0
+#Doing important work. i = 1
+#Doing important work. i = 2
+#Doing important work. i = 3
+#Doing important work. i = 4
+```
+
+## `while`
+```python
+i = 0
+while i < 10: #false 될 때까지 실행
+    print(i, end=' ')
+    i += 1
+```
+
+## + list
+```python
+squares = [n**2 for n in range(10)]
+squares
+#[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+아래는 같은 결과의 코드
+```python
+squares = []
+for n in range(10):
+    squares.append(n**2)
+squares
+#[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+## +if문
+```python
+short_planets = [planet for planet in planets if len(planet) < 6]
+short_planets
+#['Venus', 'Earth', 'Mars']
+```
+
+## +변형
+```python
+#개행으로 가독성을 높임.
+loud_short_planets =[
+    planet.upper() + '!' 
+    for planet in planets #SQL에서 SELECT, FROM
+    if len(planet) < 6 #WHERE
+]
+loud_short_planets
+#['VENUS!', 'EARTH!', 'MARS!'] #loud_short_planets 부분만 빼도 같은 결과 나옴
+```
+
+## `any()`
+List에 1이 하나라도 있으면 True를 반환하는 프로그램 짜는 방법
+
+1.
+```python
+def has_lucky_number(nums):
+    return any([num ==1 for num in nums])
+```
+배열 등 반복 가능 한 곳에  하나라도 `bool()`했을 때 `True`가 나오면 True, 비어있을 땐 False 반환
+```
+
+2.
+```python
+def has_lucky_number(nums):
+    for num in nums:
+        if num % 7 == 0:
+            return True
+    # We've exhausted the list without finding a lucky number
+    return False
+```
+
+3.
+```python
+def has_number_one(nums):
+    return len([True for num in nums if num%7==])>0
+```
+
+## **Error**: comparing `list` to `int`
+```python
+[1,2,3,4]>2 #error
+```
+
+## Example: compact coding 1
+list `L`의 원소 각각이 int `thresh` 보다 큰지 아닌지 결과를 배열로 출력
+```python
+def elementwise_greater_than(L, thresh):
+    res = []
+    for ele in L:
+        res.append(ele > thresh)
+    return res
+```
+more compact code below
+```python
+def elementwise_greater_than(L, thresh):
+    return [ele > thresh for ele in L]
+```
+
+## Example: compact coding 2
+```python
+def count_negatives(nums):
+    """Return the number of negative numbers in the given list.
+    
+    >>> count_negatives([5, -1, -2, 0, 3])
+    2
+    """
+    n_negative = 0
+    for num in nums:
+        if num < 0:
+            n_negative = n_negative + 1
+    return n_negative
+```
+이것을 아래와 같이 한 줄로 줄일 수 있다
+```python
+def count_negatives(nums):
+    return len([num for num in nums if num < 0])
+```
+또한 아래와 같이 더 줄일 수 있다
+```python
+def count_negatives(nums):
+    return sum([num < 0 for num in nums]) # True + True + False + True=3.
+```
+
+## compact readable program (readable>compact)
+> 짧은 코드가 항상 좋다. 하지만 아래([The Zen of Python](https://en.wikipedia.org/wiki/Zen_of_Python))를 기억할 것
+> Readability counts.
+> Explicit is better than implicit.
