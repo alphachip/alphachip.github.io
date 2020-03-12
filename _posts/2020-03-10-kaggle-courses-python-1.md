@@ -1,56 +1,41 @@
 ---
 layout: article
-title: Python 기본 문법 중 특이한 점
+title: Python 기본 문법
 tags: [python,kaggle-courses]
 author: alphachip
 aside:
   toc: true
 ---
+
 # 변수, 숫자
 
-## 변수
+## assigning variable
 * 선언 안해도 됨
 * 타입명 기입 안해도 됨
 * 대입하는 종류에 따라 자동으로 타입 변경됨 => 타입 아무거나 넣어도 된다
 
-## 변수 타입 확인
+## `type()`
 ```python
 a=1;
-type(a)
+type(a) #int
 a=1.1;
-type(a)
+type(a) #float
 ```
 
-## 형변환
+## `float()`, `int()` : chainging type
 ```python
-print(float(1))
-print(int(1.11))
-print(int(‘1’)+1)
+print(float(1)) #1.0
+print(int(1.11)) #1
+print(int('1')+1) #2
 ```
 
-## swap
+## `/`, ``//`` 
 ```python
-a=[1,2,3]
-b=[3,2,1]
-a,b=b,a
-#a는 b의 배열, b는 a의 배열로 swap됨
-```
+print(5/2) #2.5
+print(6/2) #3.0
 
-## 연산
-```python
-print(5/2)
-print(6/2)
-
-print(5//2)
-print(6//2)
-```
-
-## 반복문
-```python
-a=2
-if a>0:
-  print("over")
-print(song)
+print(5//2) #2
+print(6//2) #3
 ```
 
 ## 숫자를 이용한 String 반복 출력
@@ -59,14 +44,14 @@ song="La"*3
 print(song)
 ```
 
-## 숫자 관련 함수
-`min`,`max`,`abs`함수를 라이브러리 import 필요 없이 사용 가능
+## `min()`, `max()`, `abs()`
+* `min()`, `max()`, `abs()` don't need to import library
 ```python
-print(min(1,2,3))
-print(max(1,2,3))
+print(min(1,2,3)) #1
+print(max(1,2,3)) #3
 
-print(abs(2))
-print(abs(-2))
+print(abs(2)) #2
+print(abs(-2)) #2
 ```
 
 ## 주석
@@ -75,9 +60,9 @@ print(abs(-2))
 ```
 
 
-# 함수
+# functions
 
-## help : 어떤 함수인지 궁금할 때.
+## `help()` : 어떤 함수인지 궁금할 때.
 ```python
 help(round)
 ```
@@ -85,18 +70,15 @@ help(round)
 *주의*
 * *함수에 대한 이름만 쓸 것.*
 * *함수를 사용하지 말 것.*
-* *잘못된 예: `help(round(-2.01))`*
-* *int가 반환되어 int에 대한 설명을 볼 수 있음.;*
+* *잘못된 예: `help(round(-2.01))` -> int가 반환되어 int에 대한 설명을 볼 수 있음.;*
 
-## print 함수
+## `print()`
 ```python
-print(1, 2, 3, sep=' < ')
+print(1, 2, 3) #1 2 3 #default: 공백
+print(1, 2, 3, sep=' < ') #1<2<3
 ```
-값들 사이에 `<`가 추가
 
-기본 값은 공백
-
-## 함수 선언과 사용
+## defining and using
 ```python
 def least_difference(a, b, c):
     """Return the smallest difference between any two numbers
@@ -111,31 +93,31 @@ def least_difference(a, b, c):
     return min(diff1, diff2, diff3)
 
 print(
-    least_difference(1, 10, 100),
-    least_difference(1, 10, 10),
-    least_difference(5, 6, 7), #여기서 쉼표 가능
+    least_difference(1, 10, 100), #9
+    least_difference(1, 10, 10), #0
+    least_difference(5, 6, 7), #1 #여기서 `,` 가능
 )
 ```
 `””” “””`로 묶어준 것은 help함수를 썼을 때 사용자 정의 함수에 대한 설명을 해준다
 
 `>>>`이거는 배시를 뜻하는 걸로, 예시를 표현할 때 사용
 
-## 함수 인자
+## params
 ```python
-def greet(who="Colin"):
+def greet(who="Colin"): #default:Colin
     print("Hello,", who)
     
-greet()
-greet(who="Kaggle")
-greet("world")
+greet() #Colin
+greet(who="Kaggle") #Kaggle
+greet("world") #world
 ```
-다양한 매개변수 입력 방법. 디폴트 값을 지정할 수 있다.
+다양한 매개변수 입력 방법.
 
-## 반환 값이 없을 때
-`None`을 반환한다. (`null`혹은 `NULL`과 같은 의미)
+## `None` : return nothing
+`null`혹은 `NULL`과 같은 의미
 ```python
 mystery = print()
-print(mystery)
+print(mystery) #None
 ```
 
 ## 함수 중첩
@@ -153,9 +135,11 @@ def squared_call(fn, arg):
 
 print(
     call(mult_by_five, 1),
-    squared_call(mult_by_five, 1), 
+    squared_call(mult_by_five, 1),
     sep='\n', # '\n' is the newline character - it starts a new line
 )
+#5
+#25
 ```
 
 ## 함수 일괄 적용
@@ -181,49 +165,26 @@ print(
 # bool
 ## `int` 형과 `float` 형 비교 가능
 ```python
-3.0 == 3
-```
-
-result
-```python
-True
+3.0 == 3 #True
 ```
 
 ## `string` 과 `int` 비교 불가
 ```python
-‘3’ == 3
+‘3’ == 3 #False
 ```
 
-result
+## result using `bool()`
 ```python
-False
+print(bool(1)) #True # all numbers are treated as true, except 0
+print(bool(0)) #False
+print(bool("asf")) # True # all strings are treated as true, except the empty string ""
+print(bool("")) #False
 ```
-
-## *bool* 아닌 것을 함수로 변환 했을 때 결과
-```python
-print(bool(1)) # all numbers are treated as true, except 0
-print(bool(0))
-print(bool("asf")) # all strings are treated as true, except the empty string ""
-print(bool(""))
-```
-
-result
-```python
-True
-False
-True
-False
-```
-`1` 과 `0` 은 각각 `True` 와 `False`,
-
-*String* 은 `True`,
-
-`””` 은 `False` 로 변환된다
 
 
 ## `and` `or` `not`
 
-`&&`나 `||`나 `!`를 쓰지 않는다
+* Don't using `&&` or `||` or `!`
 
 ```python
 def can_run_for_president(age, is_natural_born_citizen):
@@ -231,31 +192,20 @@ def can_run_for_president(age, is_natural_born_citizen):
     # The US Constitution says you must be a natural born citizen *and* at least 35 years old
     return is_natural_born_citizen and (age >= 35)
 
-print(can_run_for_president(19, True))
-print(can_run_for_president(55, False))
-print(can_run_for_president(55, True))
-```
-
-result
-```python
-false
-false
-true
+print(can_run_for_president(19, True)) #False
+print(can_run_for_president(55, False)) #False
+print(can_run_for_president(55, True)) #True
 ```
 
 ```python
-True or True and False
+True or True and False #True
 ```
 
-result
-```python
-True
-```
 `and` 가 `or` 보다 우선 순위가 높다.
 
 가독성을 위해서는 `()`를 쓰자. 길다면 개행을 하여 여러줄로 쓰는 것도 좋다.
 
-## 추가)반환값
+## cf. return value
 ```python
 return (int(ketchup) + int(mustard) + int(onion)) == 1
 ```
@@ -265,15 +215,13 @@ return (ketchup + mustard + onion) == 1
 ```
 이렇게 해도 `bool` 형태로 반환
 
-# 조건문
-`if`, `elif`, `else` 이용
-
-`elif` 는 다른 언어의 `else if` 의 의미와 같음.
-
-조건문 내의 명령어를 여러 줄 입력하고 싶으면 줄을 맞추자
+# conditionals
+* `if`, `elif`, `else` 이용
+* `elif` 는 다른 언어의 `else if` 의 의미와 같음.
+* 조건문 내의 명령어를 여러 줄 입력하고 싶으면 줄을 맞추자
 
 ## bool  형식이 아닌 것을 조건문으로
-`if 0` 이나 `if “a”`이런 식으로 bool 함수 쓰지 않고도 조건문으로 쓸 수 있음
+`if 0` 이나 `if "a"`이런 식으로 bool 함수 쓰지 않고도 조건문으로 쓸 수 있음
 
 ## 삼항 조건 연산자<sup>ternary</sup>
 ```python
@@ -353,7 +301,7 @@ max(int_array) #배열 중 가장 큰 값 반환
 
 ## `append()`
 ```python
-hi.append(‘yo’) #리스트 끝에 추가됨
+hi.append('yo') #리스트 끝에 추가됨
 ```
 `append()` 는 list 내에서 쓰이는 함수
 
@@ -364,8 +312,15 @@ hi.pop() # it removes and returns the last element of a list
 
 ## searching
 ```python
-hi.index(‘yo’) #없는 원소를 입력하면 오류 발생
-“aaaa” in hi #To avoid error. it returns True/False
+hi.index('yo') #없는 원소를 입력하면 오류 발생
+"aaaa" in hi #To avoid error. it returns True/False
+```
+
+## swap
+```python
+a=[1,2,3]
+b=[3,2,1]
+a,b=b,a #a는 b의 배열, b는 a의 배열로 swap됨
 ```
 
 # Tuples
