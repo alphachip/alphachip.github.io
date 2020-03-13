@@ -381,7 +381,7 @@ while i < 10: #false 될 때까지 실행
     i += 1
 ```
 
-## + list
+## +list
 ```python
 squares = [n**2 for n in range(10)]
 squares
@@ -551,6 +551,24 @@ planet[-3:] #’uto’
 len(planet) #5
 ```
 
+```python
+a = ""
+len(a) #0
+```
+
+```python
+b = 'it\'s ok' #backslash is not part of the string
+len(b) #7 
+```
+
+```python
+c = """hey""" #3 #same as `hey`
+```
+
+```python
+d = '\n' #1
+```
+
 ### loop
 ```python
 [char+’! ‘ for char in planet]
@@ -657,6 +675,27 @@ print(s)
 #No, it's a dwarf planet.
 #planet!
 #dwarf planet!
+```
+
+## i.g. 문자열 찾기
+```python
+#documents: 여러 개의 문장으로 이루어진 list
+#keyword: documents의 한 인덱스당 keyword와 똑같은 문자열이 있는 지 체크('.'와 ','는 무시, 대소문자구분없게하기)
+
+def word_search(documents, keyword):
+    # list to hold the indices of matching documents
+    indices = [] #색인 저장
+    # Iterate through the indices (i) and elements (doc) of documents
+    for i, doc in enumerate(documents): #enumerate: 순서있는 배열(리스트,튜플,문자열)을 입력받아 색인과 값이 있는 객체를 반환
+        # Split the string doc into a list of words (according to whitespace)
+        tokens = doc.split() #한 색인의 문장을 공백기준으로 잘라 단어별로 list에 들어감
+        # Make a transformed list where we 'normalize' each word to facilitate matching.
+        # Periods and commas are removed from the end of each word, and it's set to all lowercase.
+        normalized = [token.rstrip('.,').lower() for token in tokens] #단어별 연속된 오른쪽의 '.'와 ','를 지우고 소문자화한 리스트를 넣기
+        # Is there a match? If so, update the list of matching indices.
+        if keyword.lower() in normalized: #keyword를 소문자화한 것이 정제한 리스트에 있는지
+            indices.append(i) #있으면 색인을 배열에 추가
+    return indices
 ```
 
 # Dictionaries
