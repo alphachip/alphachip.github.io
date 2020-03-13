@@ -509,7 +509,7 @@ print('Pluto's a planet!’) #error
 print('Pluto\'s a planet!') #ok # \’, \”, \\, \n
 ```
 
-##enter
+## enter
 ```python
 hello = "hello\nworld"
 #hello
@@ -531,4 +531,208 @@ print("world")
 print("hello", end='')
 print("pluto", end='')
 #hellopluto
+```
+
+## like list
+* list와 다른 점은 수정 불가능하다는 것
+### indexing
+```python
+planet=‘Pluto’
+planet[0] #’P’
+```
+
+### slicing
+```python
+planet[-3:] #’uto’
+```
+
+### `len()`
+```python
+len(planet) #5
+```
+
+### loop
+```python
+[char+’! ‘ for char in planet]
+#[‘P! ‘,’l! ‘,’u! ‘,’t! ‘.’o! ‘]
+```
+
+### Error: immutable
+```python
+planet[0]=‘B’ #error
+```
+
+## `upper()`
+```python
+a=“my name is ..”
+a.upper() #’MY NAME IS ..’
+```
+
+## `lower()`
+```python
+a.lower() #’my name is..’
+```
+
+## `index()`
+```python
+a.index(‘is’) #8
+```
+
+## `startswith()` : 문자열이 특정 문자로 시작하는지
+```python
+start=“my”
+a.startswith(start) #True
+```
+
+## `endswith()` : 문자열이 특정 문자로 끝나는지
+```python
+a.endswith(‘age is’) #False
+```
+
+## `split()`: 문자열을 잘게 끊는다
+```python
+words=a.split() #default: whitespace
+words #[‘my’,’name’,’is’,’..’]
+```
+
+```python
+datestr = '1956-01-31'
+year, month, day = datestr.split('-') 
+```
+
+## `join()`
+```python
+'/'.join([month, day, year]) #'01/31/1956'
+```
+
+```python
+' 👏 '.join([word.upper() for word in words]) #유니코드문자열도 가능
+#'PLUTO 👏 IS 👏 A 👏 PLANET!’
+```
+
+## `format()`
+
+필요성
+```python
+planet + ', we miss you.'
+#'Pluto, we miss you.'
+```
+
+```python
+position = 9
+#planet + ", you'll always be the " + position + "th planet to me."
+#non-string 형태가 끼여서 에러남.
+
+#planet + ", you'll always be the " + str(position) + "th planet to me."
+#"Pluto, you'll always be the 9th planet to me."
+#non-string을 string으로 형변환 시킴
+#읽기 불편하고 형변환 시키는 것도 짜잉남
+```
+사용
+```python
+"{}, you'll always be the {}th planet to me.".format(planet, position)
+#”Pluto, you'll always be the 9th planet to me."
+```
+
+활용
+```python
+pluto_mass = 1.303 * 10**22
+earth_mass = 5.9722 * 10**24
+population = 52910390
+#         2 decimal points   3 decimal points, format as percent     separate with commas
+"{} weighs about {:.2} kilograms ({:.3%} of Earth's mass). It is home to {:,} Plutonians.".format(
+    planet, pluto_mass, pluto_mass / earth_mass, population,
+)
+#"Pluto weighs about 1.3e+22 kilograms (0.218% of Earth's mass). It is home to 52,910,390 Plutonians."
+```
+
+```python
+# Referring to format() arguments by index, starting from 0
+s = """Pluto's a {0}.
+No, it's a {1}.
+{0}!
+{1}!""".format('planet', 'dwarf planet')
+print(s)
+#Pluto's a planet.
+#No, it's a dwarf planet.
+#planet!
+#dwarf planet!
+```
+
+# Dictionaries
+* key,value로 이루어짐. hash map같이.
+
+## using
+```python
+numbers = {'one':1, 'two':2, 'three':3}
+#괄호 안의 왼쪽이 key, 오른쪽이 value
+```
+
+## indexing
+```python
+numbers['one'] #1
+```
+
+## adding
+```python
+numbers['eleven'] = 11
+numbers
+#{'one': 1, 'two': 2, 'three': 3, 'eleven': 11}
+```
+
+## changing
+```python
+numbers['one'] = 'Pluto'
+numbers
+#{'one': 'Pluto', 'two': 2, 'three': 3, 'eleven': 11}
+```
+
+## list to dic
+```python
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+planet_to_initial = {planet: planet[0] for planet in planets}
+planet_to_initial
+# {'Mercury': 'M',
+# 'Venus': 'V',
+# 'Earth': 'E',
+# 'Mars': 'M',
+# 'Jupiter': 'J',
+# 'Saturn': 'S',
+# 'Uranus': 'U',
+# 'Neptune': 'N'}
+```
+
+## searching
+```python
+'Saturn' in planet_to_initial #True
+```
+
+## for loop
+```python
+for k in numbers:
+    print("{} = {}".format(k, numbers[k]))
+#one = Pluto
+#two = 2
+#three = 3
+#eleven = 11
+```
+
+## `dict.keys()` , `dict.values()`
+```python
+' '.join(sorted(planet_to_initial.values()))
+#'E J M M N S U V'
+```
+
+## `dict.items()`
+```python
+for planet, initial in planet_to_initial.items():
+    print("{} begins with \"{}\"".format(planet.rjust(10), initial)) #rjust: 문자열 10으로 만들고 오른쪽 정렬
+#   Mercury begins with "M"
+#     Venus begins with "V"
+#     Earth begins with "E"
+#      Mars begins with "M"
+#   Jupiter begins with "J"
+#    Saturn begins with "S"
+#    Uranus begins with "U"
+#   Neptune begins with "N"
 ```
