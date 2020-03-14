@@ -775,3 +775,71 @@ for planet, initial in planet_to_initial.items():
 #    Uranus begins with "U"
 #   Neptune begins with "N"
 ```
+
+# External Libraries
+## module
+* collection of variables(refer to functions or values)
+```python
+import math
+print(“type is {}”.format(type(math)))
+#It's math! It has type <class 'module'>
+```
+
+## `dir()`
+*we can see all the names in module
+```python
+print(dir(math))
+# ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
+```
+
+## `module.variable_or_func_name`
+```python
+print("pi to 4 significant digits = {:.4}".format(math.pi))
+pi to 4 significant digits = 3.142
+```
+
+## `as`
+* alias
+```python
+import math as mt
+mt.pi #3.141592653589793
+```
+or
+```python
+import math
+mt = math
+#common convention: import numpy as np, import pandas as pd
+```
+
+## To access variables in module directly
+```python
+from math import *
+print(pi, log(32, 2))
+#3.141592653589793 5.0
+```
+같은 함수를 쓰는 다른 모듈을 위의 방식으로 선언하면 후에 선언한 것이 함수를 덮어버린다.
+
+##  모듈에서 특정한 것만 가져오기
+``` python
+from math import log, pi
+from numpy import asarray
+```
+
+## Submodules
+other module in module
+
+# To understand strange objects
+1. `type()` : what is this thing?
+2. `dir()` : what can I do with it?
+3. try to use variables to give results I need after predicting in `dir()` list
+4. `help()` : tell me more
+
+# operator overloading
+```python
+[3, 4, 1, 2, 2, 1] + 10 #error
+rolls=numpy.ramdom.ranint(low=1,high=6,size=10) 
+#type: numpy.ndarray #[3,2,5,2,4,2,2,3,2,3]
+rolls+10
+#array([13, 12, 15, 12, 14, 12, 12, 13, 12, 13])
+```
+* module’s variables can interact unexpectedly with Python logic. e.g.numpy.ndarray.
