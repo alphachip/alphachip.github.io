@@ -2,7 +2,6 @@
 layout: article
 title: Adobe 탈출기_Affinity
 tags: [cost-effective,software]
-author: alphachip
 aside:
   toc: true
 ---
