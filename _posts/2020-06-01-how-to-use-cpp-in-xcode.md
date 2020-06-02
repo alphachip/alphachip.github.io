@@ -2,7 +2,6 @@
 layout: article
 title: Xcode에서 c++ 사용하기
 tags: [Xcode,C++,macOS]
-author: alphachip
 aside:
   toc: true
 ---
