@@ -2,7 +2,6 @@
 layout: article
 title: Python 기본 문법
 tags: [python,kaggle-courses]
-author: alphachip
 aside:
   toc: true
 ---
