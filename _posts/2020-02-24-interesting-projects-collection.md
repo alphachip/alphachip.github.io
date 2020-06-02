@@ -1,7 +1,6 @@
 ---
 layout: article
 title: 신기하고 재밌어보이는 프로젝트들. Interesting Projects Collection
-author: alphachip
 tag: [interesting,collection,project]
 aside:
   toc: true
