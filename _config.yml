@@ -18,9 +18,9 @@ remote_theme : kitian616/jekyll-TeXt-theme
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://alphachip.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
+url     : https://icymunchhhiip.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : Alphachip World
+title   : Icy in my chip
 description: > # this means to ignore newlines until "Language & timezone"
   development!
 
@@ -36,7 +36,7 @@ timezone: Asia/Seoul # see https://en.wikipedia.org/wiki/List_of_tz_database_tim
 author:
   type      : # "person" (default), "organization"
   name      : alphachip
-  url       : https://alphachip.github.io
+  url       : https://icymunchhhiip.github.io
   avatar    : # path or url of avatar image (square)
   bio       : I am a developer.
   email     : fsec1sun@gmail.com
@@ -55,7 +55,7 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: alphachip/alphachip.github.io
+repository: icymunchhhiip/icymunchhhiip.github.io
 repository_tree: master
 
 
